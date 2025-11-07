@@ -1,28 +1,26 @@
-
-
-// Teacher interface
+// Step 1: Define the Teacher interface
 interface Teacher {
-  readonly firstName: string;       // set only at initialization
-  readonly lastName: string;        // set only at initialization
-  fullTimeEmployee: boolean;        // required
-  location: string;                 // required
-  yearsOfExperience?: number;       // optional
-  [key: string]: any;               // allow extra attributes
+  name: string;
+  subject: string;
+  yearsOfExperience: number;
 }
 
-// Directors interface extending Teacher
+// Step 2: Define the Directors interface that extends Teacher
 interface Directors extends Teacher {
-  numberOfReports: number;          // required property
+  numberOfReports: number;
+  printNumberOfReports(): void;
 }
 
-// Example usage
+// Step 3: Create a Director object
 const director1: Directors = {
-  firstName: 'John',
-  lastName: 'Doe',
-  fullTimeEmployee: true,
-  location: 'London',
-  numberOfReports: 17
+  name: "Alice",
+  subject: "Math",
+  yearsOfExperience: 10,
+  numberOfReports: 5,
+  printNumberOfReports() {
+    console.log(`I have ${this.numberOfReports} reports.`);
+  }
 };
 
-console.log(director1);
-
+// Step 4: Use the method
+director1.printNumberOfReports();
