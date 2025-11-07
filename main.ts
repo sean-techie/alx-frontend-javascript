@@ -1,14 +1,17 @@
+// Define the Teacher interface
 interface Teacher {
   name: string;
   subject: string;
   yearsOfExperience: number;
 }
 
+// Define the Directors interface that extends Teacher
 interface Directors extends Teacher {
   numberOfReports: number;
   printNumberOfReports(): void;
 }
 
+// Create a Director object
 const director1: Directors = {
   name: "Alice",
   subject: "Math",
@@ -19,4 +22,5 @@ const director1: Directors = {
   }
 };
 
+// Call the method
 director1.printNumberOfReports();

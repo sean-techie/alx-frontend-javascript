@@ -11,4 +11,4 @@ const director1 = {
 
 // Call the method
 director1.printNumberOfReports();
-
+gi
