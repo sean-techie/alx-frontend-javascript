@@ -1,3 +1,4 @@
+// Teacher interface from previous task
 interface Teacher {
   readonly firstName: string;       // only set at initialization
   readonly lastName: string;        // only set at initialization
@@ -7,18 +8,36 @@ interface Teacher {
   [key: string]: any;               // allow dynamic additional attributes
 }
 
-// Example usage
+// Directors interface extending Teacher
+interface Directors extends Teacher {
+  numberOfReports: number;          // required property for Directors
+}
+
+// Example usage of Teacher
 const teacher3: Teacher = {
   firstName: 'John',
   lastName: 'Doe',
   fullTimeEmployee: false,
   location: 'London',
-  contract: false,      // dynamic property
+  contract: false,
 };
 
 console.log(teacher3);
 
+// Example usage of Directors
+const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  fullTimeEmployee: true,
+  location: 'London',
+  numberOfReports: 17,
+};
+
+console.log(director1);
+
 /* Output:
+
+Teacher:
 {
   firstName: "John",
   lastName: "Doe",
@@ -26,5 +45,15 @@ console.log(teacher3);
   location: "London",
   contract: false
 }
+
+Director:
+{
+  firstName: "John",
+  lastName: "Doe",
+  fullTimeEmployee: true,
+  location: "London",
+  numberOfReports: 17
+}
 */
+
 
