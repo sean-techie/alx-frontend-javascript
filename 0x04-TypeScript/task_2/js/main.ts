@@ -58,10 +58,10 @@ console.log(createEmployee("$500").constructor.name); // Director// Define inter
 type Subjects = "Math" | "History";
 
 // Function that takes a subject and returns the corresponding teaching string
-function teachClass(todayClass: Subjects): string {
+function teachClass(todayClass:Subjects): string {
     return `Teaching ${todayClass}`;
 }
 
-// Example usage
+
 console.log(teachClass("Math"));     // Teaching Math
 console.log(teachClass("History"));  // Teaching History
