@@ -117,3 +117,35 @@ console.log(printTeacher({ firstName: "Jane", lastName: "Smith" }));  // J. Smit
 console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" }));// A. Johnson
 console.log(printTeacher({ firstName: "Bob", lastName: "Brown" }));    // B. Brown
 
+// Interface for the constructor
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
+// Interface for the class methods
+interface StudentInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+class StudentClass implements StudentInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor({ firstName, lastName }: StudentConstructor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+const student = new StudentClass({ firstName: "John", lastName: "Doe" });
+
+console.log(student.displayName());  // Output: John
+console.log(student.workOnHomework());  // Output: Currently working
