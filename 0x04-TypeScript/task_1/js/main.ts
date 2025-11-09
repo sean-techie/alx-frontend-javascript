@@ -97,4 +97,16 @@ class StudentClass implements StudentClassInterface {
 // Example usage
 // const student = new StudentClass('Vincent', 'Odogwu');
 // console.log(student.displayName()); // Output: John
-// console.log(student.workOnHomework()); // Output: Currently working
+// console.log(student.workOnHomework()); // Output: Currently working// Task 3: Printing teachers
+
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName, lastName) => {
+  return `${firstName.charAt(0)}. ${lastName}`;
+};
+
+// Example usage
+console.log(printTeacher("John", "Doe"));
+console.log(printTeacher("Jane", "Smith"));
