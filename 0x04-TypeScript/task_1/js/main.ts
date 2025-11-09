@@ -94,10 +94,7 @@ class StudentClass implements StudentClassInterface {
     }
   }
 
-// Example usage
-// const student = new StudentClass('Vincent', 'Odogwu');
-// console.log(student.displayName()); // Output: John
-// console.log(student.workOnHomework()); // Output: Currently working// Task 3: Printing teachers
+// Task 3: Printing teachers
 
 // Task 3: Printing teachers
 
@@ -111,7 +108,7 @@ const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
-// Example usage
+
 console.log(printTeacher({ firstName: "John", lastName: "Doe" }));    // J. Doe
 console.log(printTeacher({ firstName: "Jane", lastName: "Smith" }));  // J. Smith
 console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" }));// A. Johnson
@@ -128,15 +125,13 @@ interface StudentInterface {
   workOnHomework(): string;
   displayName(): string;
 }
-class StudentClass implements StudentInterface {
+class StudentClass {
   firstName: string;
   lastName: string;
 
   constructor(firstName: string, lastName: string) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-}
-
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   workOnHomework(): string {
@@ -147,8 +142,8 @@ class StudentClass implements StudentInterface {
     return this.firstName;
   }
 }
+
 const student = new StudentClass("John", "Doe");
 
-
-console.log(student.displayName());  // Output: John
-console.log(student.workOnHomework());  // Output: Currently working
+console.log(student.displayName());       // John
+console.log(student.workOnHomework());    // Currently working
