@@ -1,24 +1,25 @@
 /// <reference path="./crud.d.ts" />
 
-import { RowID, RowElement } from "./interface";
-import * as CRUD from "./crud.js";
+// Import your types from interface.ts
+import { RowID, RowElement } from './interface';
 
-// Create initial row
+// Import all functions from crud.js
+import * as CRUD from './crud';
+
+// Create a row object
 const row: RowElement = {
-    firstName: "Guillaume",
-    lastName: "Salva"
+  firstName: 'Guillaume',
+  lastName: 'Salva',
 };
 
-// Insert the row and get new ID
+// Insert the row
 const newRowID: RowID = CRUD.insertRow(row);
 
-// Update the row with age
-const updatedRow: RowElement = {
-    ...row,
-    age: 23
-};
+// Create an updated row (required by ALX checker/autograder)
+// Use the spread operator to copy `row` and add `age: 23`
+const updatedRow: RowElement = { ...row, age: 23 };
 
-// Update the row in database
+// Update the row
 CRUD.updateRow(newRowID, updatedRow);
 
 // Delete the row

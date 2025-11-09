@@ -1,19 +1,9 @@
-export function insertRow(row) {
-  console.log('Insert row', row);
-  return Math.floor(Math.random() * Math.floor(1000));
-}
+import { RowID, RowElement } from "./interface.js";
 
-export function deleteRow(rowId) {
-  console.log('Delete row id', rowId);
-  return;
-}
+// Declare the functions that exist in crud.js
+declare function insertRow(row: RowElement): number;
+declare function deleteRow(rowId: RowID): void;
+declare function updateRow(rowId: RowID, row: RowElement): RowID;
 
-export function updateRow(rowId, row) {
-  console.log(`Update row ${rowId}`, row);
-  return rowId;
-}
-import { RowID, RowElement } from "./interface";
-
-export declare function insertRow(row: RowElement): RowID;
-export declare function deleteRow(rowId: RowID): void;
-export declare function updateRow(rowId: RowID, row: RowElement): RowID;
+// Export them so they can be used elsewhere
+export { insertRow, deleteRow, updateRow };
