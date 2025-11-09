@@ -132,9 +132,11 @@ class StudentClass implements StudentInterface {
   firstName: string;
   lastName: string;
 
-  constructor({ firstName, lastName }: StudentConstructor) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  constructor(firstName: string, lastName: string) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
+
   }
 
   workOnHomework(): string {
@@ -145,7 +147,8 @@ class StudentClass implements StudentInterface {
     return this.firstName;
   }
 }
-const student = new StudentClass({ firstName: "John", lastName: "Doe" });
+const student = new StudentClass("John", "Doe");
+
 
 console.log(student.displayName());  // Output: John
 console.log(student.workOnHomework());  // Output: Currently working
