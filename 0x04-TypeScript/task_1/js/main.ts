@@ -99,14 +99,21 @@ class StudentClass implements StudentClassInterface {
 // console.log(student.displayName()); // Output: John
 // console.log(student.workOnHomework()); // Output: Currently working// Task 3: Printing teachers
 
+// Task 3: Printing teachers
+
+// Define an interface for the function
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  (teacher: { firstName: string; lastName: string }): string;
 }
 
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
+// Implement the function using object destructuring
+const printTeacher: printTeacherFunction = ({ firstName, lastName }) => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
 // Example usage
-console.log(printTeacher("John", "Doe"));
-console.log(printTeacher("Jane", "Smith"));
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));    // J. Doe
+console.log(printTeacher({ firstName: "Jane", lastName: "Smith" }));  // J. Smith
+console.log(printTeacher({ firstName: "Alice", lastName: "Johnson" }));// A. Johnson
+console.log(printTeacher({ firstName: "Bob", lastName: "Brown" }));    // B. Brown
+
